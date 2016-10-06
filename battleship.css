@@ -1,15 +1,24 @@
+body {
+  background-image: url("http://www.publicdomainpictures.net/pictures/180000/velka/wooden-boat-in-a-stormy-sea.jpg");
+}
 h1 {
   color: blue;
+  font-size: 50px;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
 }
 
-
+table {
+  margin-left: 220px;
+}
  td {
   border-style: ridge;
   border-color: darkblue;
-  background-color: blue;
+  background-color: rgba(0, 0, 255, 0.5);
   color: lightgreen;
   width:70px;
   height:50px;
+
 
 }
 

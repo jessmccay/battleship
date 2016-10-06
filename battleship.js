@@ -15,6 +15,7 @@ var board = [
 ];
 var SHIP = 1;
 var HIT = 0;
+var MISS = 0;
 var torpedosUsed = 0
 
 $(document).ready(function() {
@@ -43,7 +44,7 @@ $(document).ready(function() {
      console.log("clicked on column:" + clickedOnCol);
 
     // check for ship
-    if (HIT <= 5){
+    // if (HIT === 5){
       if (board[clickedOnRow][clickedOnCol] == 1) {
         // show ship
         $(this).text("🚢");
@@ -51,17 +52,22 @@ $(document).ready(function() {
         $("h3").text("HIT " + HIT);
       } else {
         // or show boom
-        $(this).addClass("boom")  // adding class to board space that user clicked
+        $(this).addClass("boom");
+        MISS++;
+        $("h4").text("MISS " + MISS);  // adding class to board space that user clicked
       }
 
-      $(this).off();    //cannot re bomb a used board space
+     $(this).off();    //cannot re bomb a used board space
       torpedosUsed++;       //counting torpedos that user has used
       console.log(torpedosUsed + " torpedos fired");
       $("h2").text(torpedosUsed + " torpedos fired");
 
-    };
+      if (HIT === 5) {
+        $("h1").text(" YOU SUNK ALL THE BATTLESHIPS, YOU WIN!")
+      }
+    });
   });
-});
+
   // if (shipChecker()) {
   //   $("board[]").addClass("shipIsHere");
   // }
